@@ -1,7 +1,7 @@
 CFLAGS=-c -g -Wall -Werror
 CC=gcc
 
-all: recv_signal send_signal signal_alarm signal_handler signal_segfault signal_sigaction
+all: recv_signal send_signal signal_alarm signal_handler signal_segfault signal_sigaction tennis_player
 
 send: send_signal.o
 	$(CC) -o send_signal send_signal.o
@@ -20,6 +20,9 @@ handler: signal_handler.o
 
 sigaction: signal_sigaction.o
 	$(CC) -o sigaction signal_sigaction.o
+
+tennis_player: tennis_player.o
+	$(CC) -o tennis_player tennis_player.o
 
 clean:
 	rm -f *.o info pinfo finfo pmod
